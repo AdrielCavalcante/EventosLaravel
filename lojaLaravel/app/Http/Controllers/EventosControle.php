@@ -4,15 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Eventos;
-use Illuminate\Console\Scheduling\Event;
 
 class EventosControle extends Controller
 {
     public function index(){
         
-        $eventos = Eventos::all();
+        $busca = request('busca');
 
-        return view('welcome', ['eventos' => $eventos]);
+        if ($busca) {
+            $eventos = Eventos::where([
+                ['titulo', 'like','%'.$busca.'%']])->get();
+        } else {
+            $eventos = Eventos::all();
+        }
+
+        return view('welcome', ['eventos' => $eventos, 'busca'=> $busca]);
     }
 
     public function create(){
@@ -23,6 +29,7 @@ class EventosControle extends Controller
         $evento = new Eventos;
 
         $evento->titulo = $request->titulo; 
+        $evento->data = $request->data;
         $evento->cidade = $request->cidade;
         $evento->privado = $request->privado;
         $evento->descricao = $request->descricao;

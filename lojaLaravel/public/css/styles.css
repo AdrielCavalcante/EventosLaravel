@@ -63,8 +63,8 @@ header {
   color: #F2A340;
 }
 
-/* Search Container */
-#search-container {
+/* busca Container */
+#busca-container {
   background-image: url("../img/banner.jpg");
   background-size: cover;
   background-position: center;
@@ -73,13 +73,13 @@ header {
   text-align: center;
 }
 
-#search-container h1 {
+#busca-container h1 {
   color: #F2A340;
   margin-bottom: 30px;
   font-weight: 900;
 }
 
-#search-container form {
+#busca-container form {
   width: 50%;
   margin: 0 auto;
 }
