@@ -16,15 +16,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[EventosControle::class, 'index']);
 
-Route::get('/eventos/create',[EventosControle::class, 'create']);
+Route::get('/eventos/create',[EventosControle::class, 'create'])->middleware('auth');
 
 Route::get('/eventos/{id}',[EventosControle::class, 'show']);
 
 Route::post('/eventos', [EventosControle::class, 'store']);
 
+Route::delete('/eventos/{id}', [EventosControle::class, 'destroy'])->middleware('auth');
+
+Route::get('/eventos/edit/{id}', [EventosControle::class, 'edit'])->middleware('auth');
+
+Route::put('eventos/update/{id}', [EventosControle::class, 'update'])->middleware('auth');
+
 Route::get('/contato', function(){
     return view('contato');
 });
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::get('/dashboard',[EventosControle::class, 'dashboard'])->middleware('auth');
+

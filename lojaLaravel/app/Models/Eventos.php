@@ -11,5 +11,11 @@ class Eventos extends Model
 
     protected $casts = [ 'items' => 'array' ];
 
-    protected $dates = ['date'];
+    protected $dates = ['data'];
+
+    protected $guarded = [];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }
