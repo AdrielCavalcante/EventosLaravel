@@ -34,3 +34,5 @@ Route::get('/contato', function(){
 
 Route::get('/dashboard',[EventosControle::class, 'dashboard'])->middleware('auth');
 
+Route::post('/eventos/join/{id}', [EventosControle::class, 'joinEvento'])->middleware('auth');
+

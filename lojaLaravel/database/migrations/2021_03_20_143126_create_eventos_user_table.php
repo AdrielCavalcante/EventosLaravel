@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddItemsToEventosTable extends Migration
+class CreateEventosUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddItemsToEventosTable extends Migration
      */
     public function up()
     {
-        Schema::table('eventos', function (Blueprint $table) {
-            $table->json('items')->nullable();
+        Schema::create('eventos_user', function (Blueprint $table) {
+            $table->foreignId('eventos_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddItemsToEventosTable extends Migration
      */
     public function down()
     {
-        Schema::table('eventos', function (Blueprint $table) {
-            $table->dropColumn('items');
-        });
+        Schema::dropIfExists('eventos_user');
     }
 }
