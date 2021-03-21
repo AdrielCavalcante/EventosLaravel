@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 20-Mar-2021 às 16:26
+-- Tempo de geração: 21-Mar-2021 às 13:12
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 7.4.9
 
@@ -73,11 +73,9 @@ CREATE TABLE IF NOT EXISTS `eventos_user` (
 --
 
 INSERT INTO `eventos_user` (`eventos_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 1, NULL, NULL),
-(1, 2, NULL, NULL),
-(2, 2, NULL, NULL),
-(2, 1, NULL, NULL),
 (3, 1, NULL, NULL),
+(2, 1, NULL, NULL),
+(2, 2, NULL, NULL),
 (3, 2, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -191,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('YnSUwpvBVYBbCfMmXNMt0j4c4y7J40ao7WhEqYfS', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiYmRKbGFBSVZwblp0czd6NmswNHZubXF3aVQ0SWVLbE5nd1doRkpGQyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkWVZhdU9aUHJiRlhRSnhEYTJ4aUFtLi4wci56MGRQalM1Z1BGM1Izc29Bb0tpaEtYY2JJY2UiO30=', 1616257501);
+('CofbKKg0Ns1QLFdXEV1jTVrSF6tGhNd4TCvE6SXV', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoickpCRUF3RmkzWHpDREY1UmJjcjR3NlVEOXk4NGZnU0xUS212dkxlWSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO31zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJFlWYXVPWlByYkZYUUp4RGEyeGlBbS4uMHIuejBkUGpTNWdQRjNSM3NvQW9LaWhLWGNiSWNlIjt9', 1616332317);
 
 -- --------------------------------------------------------
 
