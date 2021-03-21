@@ -48,6 +48,9 @@ class EventosControle extends Controller
             $evento->image = $nomeImagem;
 
         }
+        else{
+            return redirect('/')->with('msg','Evento não foi criado. Devido a falta de imagem');
+        }
 
         $user = auth()->user();
         $evento->user_id = $user->id;
@@ -60,9 +63,23 @@ class EventosControle extends Controller
     public function show($id) {
         $evento = Eventos::findOrFail($id);
 
+        $user = auth()->user();
+
+        $hasUserJoined = false;
+
+        if ($user) {
+            $userEventos = $user->eventosAsParticipant->toArray();
+
+            foreach ($userEventos as $userEvento) {
+                if ($userEvento['id'] == $id) {
+                    $hasUserJoined = true;
+                }
+            }
+        }
+
         $donoEvento = User::where('id', $evento->user_id)->first()->toArray();
 
-        return view('eventos.show', ['evento' => $evento, 'donoEvento' => $donoEvento]);
+        return view('eventos.show', ['evento' => $evento, 'donoEvento' => $donoEvento, 'hasUserJoined' => $hasUserJoined]);
     }
 
     public function dashboard(){
@@ -104,10 +121,20 @@ class EventosControle extends Controller
     public function joinEvento($id){
         $user = auth()->user();
 
-        $user->eventosAsParticipant()->attach($id);
+        $user->eventosAsParticipant()->attach($id); //Relaciona
 
         $evento = Eventos::findOrFail($id);
 
         return redirect('/dashboard')->with('msg', 'Sua presença está confirmada no evento: '.$evento->titulo);
+    }
+
+    public function leaveEvento($id){
+        $user = auth()->user();
+
+        $user->eventosAsParticipant()->detach($id); //Corta a relação
+
+        $evento = Eventos::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Você do evento: '.$evento->titulo);
     }
 }

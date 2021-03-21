@@ -8,8 +8,9 @@
     <h1>Crie o seu Evento</h1>
     <form action="/eventos" method="post" enctype="multipart/form-data">
     @csrf
+    
         <div class="form-group">
-            <label for="image">Evento:</label>
+            <label for="image">Imagem do Evento:</label>
             <input type="file" class="from-control-file" id="image" name="image">
         </div>
         <div class="form-group">
