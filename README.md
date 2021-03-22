@@ -9,9 +9,17 @@
 ### Framework Back usado: ![Laravel](https://img.shields.io/badge/-Laravel-F05340?style=flat-square&logo=Laravel&logoColor=FFFFFF)
 ### Projeto hospedado no: ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
 
-
 #### Com a utilização de:
 - [x] Artisan.
 - [x] Migrate.
 - [x] Blade.
 - [x] Routes.
+
+#### Passo a passo:
+- 1️⃣ Baixe o WampServer(pode ser o Xampp): https://www.wampserver.com/en/
+
+- 2️⃣ Abra o PHPMyAdmin e importe **lojalaravel.sql**.
+
+- 3️⃣ Abra seu editor de código, abra o terminal e entre na pasta lojaLaravel: (Em windows: **cd lojaLaravel**)
+
+- 4️⃣ Digite o seguinte comando para fazer o servidor Laravel, rodar: **php artisan serve**. E clique na porta mencionada
