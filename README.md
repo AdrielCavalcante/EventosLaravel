@@ -23,3 +23,5 @@
 - 3️⃣ Abra seu editor de código, abra o terminal e entre na pasta lojaLaravel: (Em windows: **cd lojaLaravel**)
 
 - 4️⃣ Digite o seguinte comando para fazer o servidor Laravel, rodar: **php artisan serve**. E clique na porta mencionada
+
+##### Execução em: https://youtu.be/pGRH2z9JoAg
