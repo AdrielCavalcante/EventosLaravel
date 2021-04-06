@@ -239,3 +239,60 @@ footer {
 footer p {
   margin-bottom: 0;
 }
+
+@media (max-width: 426px) {
+  .msg {
+    font-size: 11pt;
+  }
+
+  /* busca Container */
+  #busca-container {
+    height: 300px;
+  }
+
+  #busca-container h1 {
+    font-size: 29pt;
+  }
+
+  #busca-container form {
+    width: 70%;
+  }
+
+  /* Events list */
+  #events-container {
+    padding: 20px;
+  }
+
+  #events-container h2 {
+    text-align: center;
+  }
+
+  #events-container .subtitle {
+    text-align: center;
+  }
+
+  #events-container .card {
+    flex: 1 1 49%;
+    max-width: 50%;
+  }
+
+  /* Dashboard */
+  .dashboard-events-container form{
+    margin-top: 2px;
+  }
+
+  /* Edit page */
+  .img-preview {
+    width: 200px;
+  }
+
+  /* footer */
+  footer {
+    text-align: center;
+    background-color: #353E48;
+    color: #FFF;
+    padding: 15px;
+    position: absolute;
+  }
+
+}

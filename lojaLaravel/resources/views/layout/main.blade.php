@@ -10,6 +10,11 @@
         <!--CSS do Bootstrap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+        <!--JS do Bootstrap&Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
         <!--CSS do projeto-->
         <link rel="stylesheet" href="/css/styles.css">
         <script src="/js/scripts.js"></script>
@@ -17,11 +22,14 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="/" class="navbar-brand">
+                    <img src="/img/logo.svg" alt="logo">
+                </a>    
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <a href="/" class="navbar-brand">
-                        <img src="/img/logo.svg" alt="logo">
-                    </a>
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a href="/" class="nav-link">Eventos</a>
                         </li>
