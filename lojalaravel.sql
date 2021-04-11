@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 21-Mar-2021 às 13:12
+-- Tempo de geração: 11-Abr-2021 às 00:35
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 7.4.9
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `user_id` bigint UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   KEY `eventos_user_id_foreign` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `eventos`
@@ -50,7 +50,9 @@ CREATE TABLE IF NOT EXISTS `eventos` (
 
 INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `titulo`, `descricao`, `cidade`, `privado`, `image`, `items`, `data`, `user_id`) VALUES
 (3, '2021-03-20 19:10:09', '2021-03-20 19:10:09', 'Hackers Éticos', 'Uma reunião a respeito da LGPD e Pentest', 'Rio de janeiro', 0, 'bdc4a3613dca9f310708e014e91b74e2', '[\"cadeiras\", \"brindes\"]', '2021-05-26 00:00:00', 1),
-(2, '2021-03-20 18:49:41', '2021-03-20 18:49:41', 'Acampamento na Floresta', 'Ocorrerá um acampamento na floresta da tijuca, para apreciação da natureza', 'Rio de janeiro', 0, '9c1658c6644ad6919be013e153f647e5', NULL, '2021-06-10 00:00:00', 2);
+(2, '2021-03-20 18:49:41', '2021-03-20 18:49:41', 'Acampamento na Floresta', 'Ocorrerá um acampamento na floresta da tijuca, para apreciação da natureza', 'Rio de janeiro', 0, '9c1658c6644ad6919be013e153f647e5', NULL, '2021-06-10 00:00:00', 2),
+(8, '2021-04-06 18:23:04', '2021-04-06 18:23:04', 'Programação avançada', 'awe', 'MG', 0, '2e8f60079283a9d2f0e47c17ef1e2f55', '[\"Open Food\", \"brindes\"]', '2021-05-29 00:00:00', 4),
+(10, '2021-04-06 18:34:26', '2021-04-06 18:34:26', 'Evento de Design', 'Muita coisa', 'São paulo', 0, 'aefb935e3e88f0e4417e48a6931de5ff', '[\"cadeiras\"]', '2021-04-17 00:00:00', 4);
 
 -- --------------------------------------------------------
 
@@ -76,7 +78,16 @@ INSERT INTO `eventos_user` (`eventos_id`, `user_id`, `created_at`, `updated_at`)
 (3, 1, NULL, NULL),
 (2, 1, NULL, NULL),
 (2, 2, NULL, NULL),
-(3, 2, NULL, NULL);
+(3, 2, NULL, NULL),
+(6, 4, NULL, NULL),
+(3, 4, NULL, NULL),
+(7, 4, NULL, NULL),
+(7, 4, NULL, NULL),
+(7, 4, NULL, NULL),
+(7, 4, NULL, NULL),
+(7, 4, NULL, NULL),
+(9, 4, NULL, NULL),
+(10, 4, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -189,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('CofbKKg0Ns1QLFdXEV1jTVrSF6tGhNd4TCvE6SXV', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoickpCRUF3RmkzWHpDREY1UmJjcjR3NlVEOXk4NGZnU0xUS212dkxlWSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO31zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MjtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJFlWYXVPWlByYkZYUUp4RGEyeGlBbS4uMHIuejBkUGpTNWdQRjNSM3NvQW9LaWhLWGNiSWNlIjt9', 1616332317);
+('CJGhoMw2IKhVQDHbAdG28oX9F5eMPOQ6CFSDoSUL', NULL, '127.0.0.1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRnpRb2xIdHJWYVdxMFNjbzVBdTZOeHJaRkRBcUFiWnJMcTRKeGVicSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fX0=', 1617723720);
 
 -- --------------------------------------------------------
 
@@ -213,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `users`
@@ -221,7 +232,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
 (1, 'Adriel', 'a@gmail.com', NULL, '$2y$10$vLBCSpOVRYdbRcIoknQdyuYLsRcUET7G5N4RLgsnuzsym9OTlgfGS', NULL, NULL, NULL, NULL, NULL, '2021-03-20 18:32:24', '2021-03-20 18:32:24'),
-(2, 'Teste', 'teste@gmail.com', NULL, '$2y$10$YVauOZPrbFXQJxDa2xiAm..0r.z0dPjS5gPF3R3soAoKihKXcbIce', NULL, NULL, NULL, NULL, NULL, '2021-03-20 18:38:55', '2021-03-20 18:38:55');
+(2, 'Teste', 'teste@gmail.com', NULL, '$2y$10$YVauOZPrbFXQJxDa2xiAm..0r.z0dPjS5gPF3R3soAoKihKXcbIce', NULL, NULL, NULL, NULL, NULL, '2021-03-20 18:38:55', '2021-03-20 18:38:55'),
+(4, 're', 'a.a@a2.com', NULL, '$2y$10$eWR//IVj937lOJtHaJ6vcesBcQtw///NqDDuwJQ7UX/F9wphKfodK', NULL, NULL, NULL, NULL, NULL, '2021-04-05 18:49:15', '2021-04-05 18:49:15');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
